@@ -1,0 +1,24 @@
+# build
+dist/
+.astro/
+.next/
+# deps
+node_modules/
+.pnpm-store/
+# env — KHONG BAO GIO commit
+.env
+.env.*
+!.env.example
+# he dieu hanh / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+# vercel
+.vercel/
+# log
+*.log
+# anh chup / file nhap cua Claude va bo kiem tra - khong day len repo
+Claude outputs/
+kiem-tra-anh/
