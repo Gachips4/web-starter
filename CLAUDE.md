@@ -92,7 +92,7 @@ Tài liệu để **dựng** một trang / landing nằm ở `docs/<ten-trang>/`
 Mọi token ở **`src/styles/tokens.css`**, sinh từ biến Figma.
 
 - ⛔ **Không tự chế giá trị mới** (màu, chữ, khoảng cách, bo góc). Thiếu → nêu ra, hỏi. Đừng viết `padding: 18px`.
-- ⛔ **Không hardcode.** `#0F6BB0` thay vì `var(--blue-600)` là lỗi.
+- ⛔ **Không hardcode.** `#123456` thay vì `var(--blue-600)` là lỗi.
 - ⛔ <<nếu áp dụng: Không có `#FFFFFF` / `#fff` / `white` trong CSS — trắng đục dùng `var(--gray-50)`, trắng trong dùng token có alpha.>>
 - Figma có giá trị **ngoài thang** (vd. chữ 100px khi thang lớn nhất 80, khoảng 140 khi thang không có) → **dừng hỏi**, không làm tròn lặng lẽ.
 
