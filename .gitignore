@@ -22,3 +22,6 @@ Thumbs.db
 # anh chup / file nhap cua Claude va bo kiem tra - khong day len repo
 Claude outputs/
 kiem-tra-anh/
+# file rieng tren may (Claude Code) - khong day len repo
+CLAUDE.local.md
+.claude/settings.local.json

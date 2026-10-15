@@ -25,7 +25,8 @@ const walk = (d) => { for (const f of fs.readdirSync(d, { withFileTypes: true })
   const p = path.join(d, f.name);
   if (f.isDirectory()) walk(p); else if (/\.(astro|css|scss|ts|tsx|js|jsx|mjs|html|vue|svelte)$/.test(f.name) && !BO_QUA.has(f.name)) files.push(p);
 } };
-walk(THU_MUC);
+if (fs.existsSync(THU_MUC)) walk(THU_MUC);   // repo mới chưa có src/ → không sập, báo 0 file
+else console.log(`(chưa có thư mục ${THU_MUC}/ — chưa có gì để kiểm)`);
 
 let hong = 0;
 for (const [ten, re] of LUAT) {

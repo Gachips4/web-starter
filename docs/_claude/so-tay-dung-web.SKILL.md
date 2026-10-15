@@ -12,7 +12,7 @@ Skill này **không thay** `/website-production-agent`. Hai skill chia việc nh
 | `/website-production-agent` | **Làm theo thứ tự nào?** Các phase, cổng duyệt, ai quyết cái gì |
 | `/so-tay-dung-web` *(skill này)* | **Gặp chuyện X thì làm gì? Phòng từ đầu thế nào?** |
 
-Nguồn: dự án BAIKA (08–10/2026). Đặc điểm của dự án đó: site tĩnh Astro + Vercel, người duyệt là designer không biết code, công ty không có dev, agent viết code và người dùng tự chạy `git push`.
+Nguồn: dự án gốc (08–10/2026). Đặc điểm của dự án đó: site tĩnh Astro + Vercel, người duyệt là designer không biết code, công ty không có dev, agent viết code và người dùng tự chạy `git push`.
 
 ## Khi nào dùng
 
@@ -126,13 +126,13 @@ Repo chưa có `tools/kiem-tra/` → đề nghị người dùng chép từ repo
 
 ### 2.6 Kiến trúc
 
-| Tình huống | Hướng đã chốt ở BAIKA |
+| Tình huống | Hướng đã chốt ở dự án gốc |
 | --- | --- |
 | Landing mới chạy domain khác | **Chung một source**, gắn domain bằng rewrite theo host (Vercel). Không tách repo chỉ vì khác domain. Tên gọi: *multi-site on a single codebase* |
 | Công cụ trên trang cần lưu dữ liệu hoặc cần agent | Tách theo **bản chất**, không theo domain. Phần giao diện ở trang; phần xử lý ở backend riêng (repo, máy chạy, kho riêng), nối bằng API. Repo website **không** chứa logic agent hay kho dữ liệu |
 | Công cụ chỉ tính toán | Để trong trang, JS nhỏ tại chỗ, không framework. Mọi tham số ở một chỗ. Có ca kiểm thử |
 | Trang đang dựng dở | `noindex` + nhánh riêng + Preview |
-| Repo public hay private | **Hỏi ai chốt** trước khi báo động. Ở BAIKA, public là chủ ý của sếp, còn tài liệu thì lạc hậu |
+| Repo public hay private | **Hỏi ai chốt** trước khi báo động. Ở dự án gốc, public là chủ ý của sếp, còn tài liệu thì lạc hậu |
 
 ---
 
@@ -152,7 +152,7 @@ Repo chưa có `tools/kiem-tra/` → đề nghị người dùng chép từ repo
 ## 4. Làm việc với người duyệt không phải dev
 
 - Giải thích thuật ngữ ngay lần đầu dùng, lấy ví dụ trong chính dự án.
-- Nhiều chỗ cần chốt → **bảng mã** (`L1`, `L2`… / `D1`…), mỗi dòng kèm đề xuất của agent. Người duyệt trả lời từng dòng: **F / N / chữ khác / bỏ**. Ở BAIKA, cách này chốt được 13 chỗ lệch trong một tin nhắn.
+- Nhiều chỗ cần chốt → **bảng mã** (`L1`, `L2`… / `D1`…), mỗi dòng kèm đề xuất của agent. Người duyệt trả lời từng dòng: **F / N / chữ khác / bỏ**. Ở dự án gốc, cách này chốt được 13 chỗ lệch trong một tin nhắn.
 - Thứ người dùng phải tự làm (`git push`, bấm quyền) → đưa **đúng lệnh** để dán, nói rõ **kết quả trông thế nào là xong**.
 - Tài liệu dài → hai bản: `.md` (nguồn) và trang nhìn (artifact). Sửa `.md` trước, publish lại **đúng link cũ**.
 - Phát hiện điều đáng lo → nói, **kèm mức chắc chắn**. Chưa kiểm thì nói là chưa kiểm.

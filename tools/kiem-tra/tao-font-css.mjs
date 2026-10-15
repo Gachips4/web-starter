@@ -3,8 +3,8 @@
 // ảnh chụp dùng font thay thế → chữ rộng hẹp khác → so ảnh và đo tràn SAI.
 //
 // Cách dùng (ngoài repo, không thêm vào package.json):
-//   mkdir /tmp/font && cd /tmp/font && npm i @fontsource/be-vietnam-pro @fontsource/chakra-petch
-//   node <repo>/tools/kiem-tra/tao-font-css.mjs /tmp/font "Be Vietnam Pro=be-vietnam-pro" "Chakra Petch=chakra-petch" > /tmp/font/fonts.css
+//   mkdir /tmp/font && cd /tmp/font && npm i @fontsource/inter
+//   node <repo>/tools/kiem-tra/tao-font-css.mjs /tmp/font "Inter=inter" > /tmp/font/fonts.css
 //   FONT_CSS=/tmp/font/fonts.css node tools/kiem-tra/kiem-trang.mjs
 import fs from 'node:fs';
 import path from 'node:path';

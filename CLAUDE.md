@@ -1,7 +1,9 @@
 # CLAUDE.md — luật của repo `<<TÊN-REPO>>`
 
-*Bản mẫu từ bộ khởi tạo web-starter (rút từ dự án BAIKA, 10/2026). Thay mọi chỗ `<<...>>`; xoá dòng này khi xong.*
+*Bản mẫu từ bộ khởi tạo web-starter (rút từ dự án gốc, 10/2026). Thay mọi chỗ `<<...>>`; xoá dòng này khi xong.*
 *Đọc hết file này trước khi sửa bất cứ dòng nào.*
+
+> **Mỗi phiên, đọc theo thứ tự:** `~/.claude/CLAUDE.md` (cách làm việc với người dùng — mọi dự án) → `CLAUDE.local.md` (riêng máy, nếu có) → file này (luật repo) → <<file trạng thái>> → `docs/<trang>/SPEC-MASTER.md` nếu làm một trang.
 
 ---
 
@@ -49,7 +51,7 @@ Ngoài phạm vi v1: <<...>>
 
 **Mặc định là tĩnh, không JS.** JS chỉ cho thứ thật sự tương tác (menu, accordion, form, công cụ tính). Site tĩnh không ai chăm vẫn sống — với công ty không có dev, đó là lý do quan trọng nhất.
 
-**Nhiều site / nhiều domain:** frontend (các site, landing) **chung một source**, gắn domain bằng rewrite theo host. Backend (API, agent, dữ liệu người dùng) **source riêng** — repo này không chứa logic agent hay kho dữ liệu.
+**Nhiều site / nhiều domain:** frontend (các site, landing) **chung một source**, gắn domain bằng luật theo host. *(Vercel: dùng `routes`, không dùng `rewrites` — `rewrites` thua file tĩnh, không đè được `/` đã có `index.html`.)* Backend (API, agent, dữ liệu người dùng) **source riêng** — repo này không chứa logic agent hay kho dữ liệu.
 
 ---
 
@@ -163,13 +165,15 @@ node tools/kiem-tra/kiem-trang.mjs     # tràn ngang · h1 · alt · lỗi JS
 | --- | --- |
 | Viết code, sửa spec, build, kiểm tra | Agent |
 | `git add` **từng file** + `git commit` | Agent — bằng **danh tính có sẵn của repo** |
-| **`git push`** | **<<TÊN>>** — agent không bao giờ chạm mật khẩu / token |
-| Xem link Preview, duyệt | <<TÊN>> |
+| `git push` **nhánh riêng** | Agent — dùng phiên đăng nhập đã lưu trên máy; không bao giờ đọc / nhập mật khẩu, token |
+| Mở Pull Request, xem link Preview, duyệt, **gộp vào `main`** | <<TÊN>> |
+| Push thẳng `main` · force push · xoá nhánh trên GitHub | **Không ai** — `.claude/settings.json` chặn + khoá nhánh `main` trên GitHub |
 
-- Danh tính commit đặt **cho riêng repo**: `user.name = <<...>>` · `user.email = <<...>>` (email phải gắn tài khoản GitHub — sai thì Vercel báo "GitHub user not found" và có thể chặn build).
+- Danh tính commit đặt **cho riêng repo**, **do người tự đặt** (agent không chạy `git config`): `user.name = <<...>>` · `user.email = <<...>>` (email phải gắn tài khoản GitHub sở hữu repo — sai thì Vercel báo "GitHub user not found" và có thể chặn build).
+- Quyền agent: `.claude/settings.json`. Ghi chú riêng máy: `CLAUDE.local.md` (không lên GitHub).
 - ⛔ `git -c user.email=... commit` — không bao giờ ghi đè danh tính.
 - ⛔ `git push --force` · ⛔ `git add -A` khi chưa đọc `git status` · ⛔ commit `.env`, ảnh chụp, file nháp.
-- Trang mới / thay đổi lớn → nhánh riêng → Vercel dựng Preview → duyệt → gộp `main`.
+- Trang mới / thay đổi lớn → nhánh riêng → agent push → Vercel dựng Preview → mở Pull Request → duyệt → gộp `main`. Tên nhánh không dấu, nối gạch ngang, không bắt đầu bằng `main`.
 - Kiểm trước khi báo push: `git log --format='%an <%ae>' -1`.
 - **Phanh khẩn cấp:** Vercel → bản deploy cũ → **Promote to Production**. Tập thử một lần sau launch.
 
@@ -185,10 +189,10 @@ node tools/kiem-tra/kiem-trang.mjs     # tràn ngang · h1 · alt · lỗi JS
 
 | Bài học | Nguồn |
 | --- | --- |
-| **Sau mỗi lượt ghi hàng loạt, mở ra NHÌN.** Số đếm khớp không chứng minh kết quả đúng | BAIKA — bind 566 màu "0 lỗi" nhưng 8 ô thành khối trắng đặc |
-| **Dữ liệu mẫu trong file demo ≠ yêu cầu dự án** | BAIKA — cả một luồng việc ảo sinh ra từ khối demo, sống qua nhiều phiên |
-| **Đừng ghi một trạng thái vào tài liệu nếu chưa kiểm** · và khi thấy hệ thống "sai so với tài liệu" → **hỏi trước khi báo động** | BAIKA — "repo đang Private" là suy luận; thực tế để public là chủ ý của sếp |
-| **Thao tác Figma theo tên node → kiểm kích thước kết quả trước khi ghi** | BAIKA — componentise nhầm cả khối form |
+| **Sau mỗi lượt ghi hàng loạt, mở ra NHÌN.** Số đếm khớp không chứng minh kết quả đúng | Dự án gốc — bind 566 màu "0 lỗi" nhưng 8 ô thành khối trắng đặc |
+| **Dữ liệu mẫu trong file demo ≠ yêu cầu dự án** | Dự án gốc — cả một luồng việc ảo sinh ra từ khối demo, sống qua nhiều phiên |
+| **Đừng ghi một trạng thái vào tài liệu nếu chưa kiểm** · và khi thấy hệ thống "sai so với tài liệu" → **hỏi trước khi báo động** | Dự án gốc — "repo đang Private" là suy luận; thực tế để public là chủ ý của sếp |
+| **Thao tác Figma theo tên node → kiểm kích thước kết quả trước khi ghi** | Dự án gốc — componentise nhầm cả khối form |
 | <<thêm bài học của dự án này>> | |
 
 ---
