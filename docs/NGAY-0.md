@@ -26,7 +26,7 @@ Mỗi dòng có 3 cột: **chốt cái gì · vì sao phải chốt sớm · ghi
 ## C. Thiết kế (Figma)
 
 - [ ] **Token có sẵn trong Figma** (màu, chữ, khoảng cách, bo góc, bóng) **trước khi vẽ trang**. *Vì sao: vẽ trước rồi token hoá sau thì phải gắn lại hàng trăm chỗ.*
-- [ ] **Luật tổ chức file:** component **chỉ** ở page `Component`. Page `UI` chia section `Desktop` / `Tablet` / `Mobile`. **Không để frame nháp hay bản cũ cạnh bản thật.** *Vì sao: ở dự án gốc, agent gặp hai `Text field` trùng tên, hai frame Remote Office và hai bản nháp R4.*
+- [ ] **Luật tổ chức file:** component **chỉ** ở page `Component`. Page `UI` chia section `Desktop` / `Tablet` / `Mobile`. **Không để frame nháp hay bản cũ cạnh bản thật.** *Vì sao: ở dự án gốc, agent gặp hai `Text field` trùng tên, hai frame cùng tên cho một trang và hai bản nháp của cùng một khối.*
 - [ ] **Danh sách breakpoint** (vd. 375 / 768 / 1280). Frame lệch số coi như sót.
 - [ ] **Chốt chữ trước, rồi mới nhân bản ra tablet/mobile.** *Vì sao: dự án gốc vẽ tablet/mobile trước khi chốt chữ, nên 6 frame mang chữ cũ và chữ rút gọn.*
 - [ ] **Khung chứa nội dung dùng auto-layout**, không để chiều cao cố định. *Vì sao: thêm một dòng chú thích là nút bị đẩy tràn khỏi khung.*
@@ -35,7 +35,7 @@ Mỗi dòng có 3 cột: **chốt cái gì · vì sao phải chốt sớm · ghi
 ## D. Nội dung
 
 - [ ] **Một nguồn chữ chính thức** (`spec-noi-dung.md`) và **ai duyệt**.
-- [ ] **Con số kinh doanh** (giá, công thức, cam kết thời gian) có người duyệt **có tên**. *Vì sao: ở dự án gốc, con số 1,8 triệu và luật chọn gói treo nhiều ngày chờ sếp.*
+- [ ] **Con số kinh doanh** (giá, công thức, cam kết thời gian) có người duyệt **có tên**. *Vì sao: ở dự án gốc, một con số giá và luật chọn gói treo nhiều ngày chờ sếp.*
 - [ ] **Điều KHÔNG được hứa với khách** (pháp lý, BHXH, SLA…). → `spec-noi-dung.md` mục "Ranh giới"
 - [ ] **Thông tin pháp nhân** đúng hiện hành: địa chỉ sau sáp nhập hành chính, MST.
 - [ ] **Dữ liệu demo / file mẫu được đánh dấu rõ là demo.** *Vì sao: ở dự án gốc, cả một luồng việc ảo sinh ra từ một khối demo.*
