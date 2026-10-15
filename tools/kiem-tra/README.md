@@ -1,6 +1,6 @@
 # Bộ kiểm tra — chạy trước khi báo "xong"
 
-Những script này rút từ dự án BAIKA (09/2026). Mỗi cái sinh ra từ một lỗi có thật: lỗi đó lọt qua vì lúc ấy chưa có cách nào kiểm nó.
+Những script này rút từ dự án gốc (09/2026). Mỗi cái sinh ra từ một lỗi có thật: lỗi đó lọt qua vì lúc ấy chưa có cách nào kiểm nó.
 
 | Script | Trả lời câu hỏi | Cần trình duyệt? |
 | --- | --- | --- |
@@ -27,7 +27,7 @@ node tools/kiem-tra/so-anh.mjs              # 5. nếu đã sửa component dùn
 PAGES=/trang-vua-sua node tools/kiem-tra/chup.mjs   # 6. MỞ ẢNH RA NHÌN
 ```
 
-**Bước 6 không được bỏ.** Ở BAIKA, một lượt sửa từng báo "0 lỗi", nhưng 8 ô ở trang chủ đã biến thành khối trắng đặc. Chỉ khi mở ảnh ra nhìn mới thấy.
+**Bước 6 không được bỏ.** Ở dự án gốc, một lượt sửa từng báo "0 lỗi", nhưng 8 ô ở trang chủ đã biến thành khối trắng đặc. Chỉ khi mở ảnh ra nhìn mới thấy.
 
 ## So ảnh với bản trước khi sửa (bước 5)
 

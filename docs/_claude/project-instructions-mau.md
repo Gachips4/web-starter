@@ -1,6 +1,8 @@
 # Mẫu Project Instructions — dán vào ô "Instructions" của project Claude mới
 
-*Rút từ project BAIKA. Thay `<<...>>`, xoá phần không dùng. Đừng dán API key, token hay mật khẩu vào đây: instructions được nạp lại ở mọi tin nhắn.*
+> ⚠️ **Bản cũ — chỉ dùng khi làm trên claude.ai (project), không làm bằng Claude Code.** Với Claude Code, cùng nội dung này đã tách vào `~/.claude/CLAUDE.md` (mẫu `claude-home-mau.md`), `CLAUDE.md` và `CLAUDE.local.md` (mẫu `CLAUDE.local-mau.md`).
+
+*Rút từ project gốc. Thay `<<...>>`, xoá phần không dùng. Đừng dán API key, token hay mật khẩu vào đây: instructions được nạp lại ở mọi tin nhắn.*
 
 ---
 
