@@ -13,6 +13,7 @@ Rút từ một dự án thật (08–10/2026): website marketing tĩnh, ngườ
 
 ```
 CLAUDE.md                          ← luật repo (mẫu, thay <<...>>) — chung cho mọi agent, lên GitHub
+AGENTS.md                          ← chỉ trỏ về CLAUDE.md, để Codex và agent khác không tự sinh bản chép sai
 .claude/settings.json              ← quyền của agent: được chạy / phải hỏi / bị cấm
 .gitignore                         ← đã chặn .env, CLAUDE.local.md, Claude outputs/, kiem-tra-anh/
 docs/NGAY-0.md                     ← checklist ngày 0
